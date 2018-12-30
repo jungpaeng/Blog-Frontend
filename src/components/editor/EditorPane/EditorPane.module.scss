@@ -1,0 +1,55 @@
+@import '../../../styles/utils';
+
+.editor-pane {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+
+    .title {
+        border: none;
+        outline: none;
+        background-color: $oc-gray-7;
+        padding: 1rem;
+        font-size: 1.5rem;
+        font-weight: 500;
+        color: #FFFFFF;
+
+        &::placeholder {
+            color: rgba($color: #FFFFFF, $alpha: 0.75);
+        }
+    }
+
+    .code-editor {
+        flex: 1;
+        background: $oc-gray-9;
+    }
+
+    .tags {
+        display: flex;
+        align-items: center;
+        padding: 0 1rem;
+        height: 2rem;
+        background: $oc-gray-7;
+
+        .description {
+            margin-right: 1rem;
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: white;
+        }
+
+        input {
+            flex: 1;
+            border: none;
+            outline: none;
+            background: none;
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: rgba($color: #FFFFFF, $alpha: 0.9);
+
+            &::placeholder {
+                color: rgba($color: #FFFFFF, $alpha: 0.75);
+            }
+        }
+    }
+}
