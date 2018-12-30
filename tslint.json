@@ -9,6 +9,7 @@
         "member-access": false,
         "object-curly-spacing": ["error", "never"],
         "variable-name": [true, "ban-keywords", "check-format", "allow-pascal-case"],
-        "ordered-imports": false
+        "ordered-imports": false,
+        "align": false
     }
 }
