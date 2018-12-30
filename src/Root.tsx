@@ -4,7 +4,6 @@ import {Provider} from 'react-redux';
 import App from './components/App';
 import configure from './store/configure';
 
-// @ts-ignore
 const store = configure();
 
 const Root: React.FC = () => {
