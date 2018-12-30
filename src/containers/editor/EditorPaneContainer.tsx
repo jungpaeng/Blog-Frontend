@@ -6,27 +6,32 @@ import {actionCreators as editorActions, IEditorPayload} from '../../store/modul
 import {IStoreState} from '../../store/modules';
 
 // TODO: 옵션 제거되어야 함
-interface IProps {
-    markdown?: string;
-    tage?: string;
-    title?: string;
-    EditorActions?: typeof editorActions;
+interface IStateToProps {
+    markdown: string;
+    tags: string;
+    title: string;
 }
 
-class EditorPaneContainer extends React.Component<IProps> {
+interface IDispatchToProps {
+    EditorActions: typeof editorActions;
+}
+
+type Props = IStateToProps & IDispatchToProps;
+
+class EditorPaneContainer extends React.Component<Props> {
     handleChangeInput = ({name, value}: IEditorPayload) => {
         const {EditorActions} = this.props;
         EditorActions.changeInput({name, value});
     }
 
     render() {
-        const {title, tage, markdown} = this.props;
+        const {title, tags, markdown} = this.props;
 
         return (
             <EditorPane
                 title={title}
                 markdown={markdown}
-                tage={tage}
+                tags={tags}
             />
         );
     }
