@@ -1,7 +1,7 @@
 import * as React from 'react';
 import {connect} from 'react-redux';
 import {bindActionCreators} from 'redux';
-import EditorPane from '../../components/editor/EditorPane/EditorPane';
+import EditorPane, {IEditorChangeInputParams} from '../../components/editor/EditorPane/EditorPane';
 import {actionCreators as editorActions, IEditorPayload} from '../../store/modules/editor';
 import {IStoreState} from '../../store/modules';
 
@@ -18,7 +18,7 @@ interface IDispatchToProps {
 type Props = IStateToProps & IDispatchToProps;
 
 class EditorPaneContainer extends React.Component<Props> {
-    handleChangeInput = ({target: {name, value}}: React.ChangeEvent<HTMLInputElement>) => {
+    handleChangeInput = ({name, value}: IEditorChangeInputParams) => {
         const {EditorActions} = this.props;
         EditorActions.changeInput({name, value});
     }

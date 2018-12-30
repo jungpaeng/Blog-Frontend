@@ -12,16 +12,22 @@ import styles from './EditorPane.module.scss';
 
 const cx = classNames.bind(styles);
 
+export interface IEditorChangeInputParams {
+    name: string;
+    value: string;
+}
+
 interface IProps {
     markdown: string;
     tags: string;
     title: string;
-    onChangeInput: ({target: {name, value}}: React.ChangeEvent<HTMLInputElement>) => void;
+    onChangeInput: ({name, value}: IEditorChangeInputParams) => void;
 }
 
 class EditorPane extends React.Component<IProps> {
-    editorRef: HTMLDivElement = {} as HTMLDivElement;
-    codeMirror: CodeMirror.Editor = {} as CodeMirror.Editor;
+    editorRef!: HTMLDivElement;
+    cursor!: CodeMirror.Position;
+    codeMirror!: CodeMirror.Editor;
 
     initializeEditor = () => {
         this.codeMirror = CodeMirror(this.editorRef, {
