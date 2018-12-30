@@ -1,0 +1,14 @@
+@import '../../../styles/utils';
+
+.editor-template {
+    .panes {
+        display: flex;
+        height: calc(100vh - 4rem);
+        background-color: $oc-gray-1;
+
+        .pane {
+            display: flex;
+            flex: 1;
+        }
+    }
+}
