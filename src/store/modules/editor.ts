@@ -1,11 +1,10 @@
 import {createAction, handleActions, Action} from 'redux-actions';
-import {Map, Record} from 'immutable';
 
 // action tyles
 const INITALIZE = 'editor/INITALIZE';
 const CHANGE_INPUT = 'editor/CHANGE_INPUT';
 
-interface IEditorPayload {
+export interface IEditorPayload {
     name: 'markdown' | 'tags' | 'title';
     value: string;
 }
