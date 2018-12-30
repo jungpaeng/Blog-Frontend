@@ -4,7 +4,7 @@ import {EditorPage, ListPage, NotFoundPage, PostPage} from '../pages';
 
 const App: React.FC = () => {
     return (
-        <div className="dodo">
+        <div>
             <Switch>
                 <Route exact path="/" component={ListPage} />
                 <Route path="/page/:page" component={ListPage} />
