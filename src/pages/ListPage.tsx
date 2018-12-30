@@ -1,10 +1,13 @@
 import * as React from 'react';
-import PageTemplate from '../components/common/PageTemplate/PageTemplate';
+import PageTemplate from '../components/common/PageTemplate';
+import ListWrapper from '../components/list/ListWrapper';
 
 const ListPage: React.FunctionComponent = () => {
     return (
         <PageTemplate>
-            List
+            <ListWrapper>
+                List
+            </ListWrapper>
         </PageTemplate>
     );
 };
