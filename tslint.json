@@ -8,6 +8,7 @@
         "ter-indent": [true, 4],
         "member-access": false,
         "object-curly-spacing": ["error", "never"],
-        "variable-name": [true, "ban-keywords", "check-format", "allow-pascal-case"]
+        "variable-name": [true, "ban-keywords", "check-format", "allow-pascal-case"],
+        "ordered-imports": false
     }
 }
