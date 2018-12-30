@@ -4,13 +4,11 @@ import {
     createStore,
     applyMiddleware,
     compose,
-    combineReducers,
     AnyAction
 } from 'redux';
 import reduxPender from 'redux-pender';
-import * as modules from './modules';
+import modules from './modules';
 
-const reducers = combineReducers(modules as any);
 const middlewares = [reduxPender()];
 
 // Development mode
@@ -20,7 +18,7 @@ const composeEnhancers = devtools || compose;
 
 // preloadedState is ServerSideRendering initalState
 const configure = (preloadedState?: AnyAction) => createStore(
-    reducers,
+    modules,
     preloadedState,
     composeEnhancers(applyMiddleware(...middlewares))
 );
