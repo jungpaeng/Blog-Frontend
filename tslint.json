@@ -5,11 +5,12 @@
         "tslint-config-airbnb"
     ],
     "rules": {
-        "ter-indent": [true, 4],
+        "align": false,
         "member-access": false,
         "object-curly-spacing": ["error", "never"],
-        "variable-name": [true, "ban-keywords", "check-format", "allow-pascal-case"],
         "ordered-imports": false,
-        "align": false
+        "ter-indent": [true, 4],
+        "trailing-comma": [true, "never"],
+        "variable-name": [true, "ban-keywords", "check-format", "allow-pascal-case"]
     }
 }
