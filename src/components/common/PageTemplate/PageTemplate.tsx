@@ -6,7 +6,7 @@ import Footer from '../Footer';
 
 const cx = classNames.bind(styles);
 
-const PageTemplate: React.FunctionComponent = ({children}) => (
+const PageTemplate: React.FC = ({children}) => (
     <div className={cx('page-template')}>
         <Header />
             <main>

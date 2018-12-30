@@ -5,7 +5,7 @@ import styles from './Footer.module.scss';
 
 const cx = classNames.bind(styles);
 
-const Footer: React.FunctionComponent = () => (
+const Footer: React.FC = () => (
     <footer className={cx('footer')}>
         <Link
             to="/"

@@ -6,7 +6,7 @@ import Button from '../Button';
 
 const cx = classNames.bind(styles);
 
-const Header: React.FunctionComponent = () => (
+const Header: React.FC = () => (
     <header className={cx('header')}>
         <div className={cx('header-content')}>
             <div className={cx('brand')}>

@@ -1,6 +1,6 @@
 import * as React from 'react';
 
-const NotFoundPage: React.FunctionComponent = () => {
+const NotFoundPage: React.FC = () => {
     return (
         <div>
             NotFound

@@ -2,7 +2,7 @@ import * as React from 'react';
 import {Switch, Route} from 'react-router-dom';
 import {EditorPage, ListPage, NotFoundPage, PostPage} from '../pages';
 
-const App: React.FunctionComponent = () => {
+const App: React.FC = () => {
     return (
         <div className="dodo">
             <Switch>

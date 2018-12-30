@@ -4,7 +4,7 @@ import ListWrapper from '../components/list/ListWrapper';
 import PostList from '../components/list/PostList';
 import Pagination from '../components/list/Pagination';
 
-const ListPage: React.FunctionComponent = () => {
+const ListPage: React.FC = () => {
     return (
         <PageTemplate>
             <ListWrapper>
