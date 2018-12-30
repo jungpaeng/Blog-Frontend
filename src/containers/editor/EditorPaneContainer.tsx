@@ -5,7 +5,6 @@ import EditorPane from '../../components/editor/EditorPane/EditorPane';
 import {actionCreators as editorActions, IEditorPayload} from '../../store/modules/editor';
 import {IStoreState} from '../../store/modules';
 
-// TODO: 옵션 제거되어야 함
 interface IStateToProps {
     markdown: string;
     tags: string;
