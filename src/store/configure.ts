@@ -10,6 +10,7 @@ import {
 import reduxPender from 'redux-pender';
 import * as modules from './modules';
 
+// @ts-ignore
 const reducers = combineReducers(modules);
 const middlewares = [reduxPender()];
 
