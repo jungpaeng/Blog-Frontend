@@ -43,15 +43,13 @@ class EditorPane extends React.Component<IProps> {
         this.initializeEditor();
     }
 
-    componentDidUpdate(prevProps: IProps, prevState: IProps) {
+    componentDidUpdate(prevProps: IProps) {
         if (prevProps.markdown !== this.props.markdown) {
-            if (!this.codeMirror) {
+            if (!this.codeMirror || !this.cursor) {
                 return;
             }
             this.codeMirror.setValue(this.props.markdown);
-            if (!this.cursor) {
-                return;
-            }
+            // @ts-ignore
             this.codeMirror.setCursor(this.cursor);
         }
     }
@@ -64,6 +62,7 @@ class EditorPane extends React.Component<IProps> {
 
     handleChangeMarkdown = (doc: CodeMirror.Editor) => {
         const {onChangeInput} = this.props;
+        // @ts-ignore
         this.cursor = doc.getCursor();
 
         onChangeInput({
