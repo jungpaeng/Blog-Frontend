@@ -13,6 +13,7 @@
         "ter-indent": [true, 4],
         "trailing-comma": [true, "never"],
         "variable-name": [true, "ban-keywords", "check-format", "allow-pascal-case"],
-        "jsx-boolean-value": false
+        "jsx-boolean-value": false,
+        "jsx-no-multiline-js": false
     }
 }
