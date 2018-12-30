@@ -7,7 +7,7 @@ import configure from './store/configure';
 // @ts-ignore
 const store = configure();
 
-const Root: React.FunctionComponent<any> = () => {
+const Root: React.FunctionComponent = () => {
     return (
         <Provider store={store}>
             <BrowserRouter>

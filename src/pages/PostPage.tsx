@@ -1,6 +1,6 @@
 import * as React from 'react';
 
-const PostPage = () => {
+const PostPage: React.FunctionComponent = () => {
     return (
         <div>
             Post

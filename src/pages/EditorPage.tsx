@@ -1,6 +1,6 @@
 import * as React from 'react';
 
-const EditorPage = () => {
+const EditorPage: React.FunctionComponent = () => {
     return (
         <div>
             Editor

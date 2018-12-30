@@ -4,7 +4,7 @@ import styles from './Footer.module.scss';
 
 const cx = classNames.bind(styles);
 
-const Footer = () => (
+const Footer: React.FunctionComponent = () => (
     <div className={cx('footer')}>
         Footer
     </div>

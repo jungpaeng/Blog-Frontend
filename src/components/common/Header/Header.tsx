@@ -4,7 +4,7 @@ import styles from './Header.module.scss';
 
 const cx = classNames.bind(styles);
 
-const Header = () => (
+const Header: React.FunctionComponent = () => (
     <div className={cx('header')}>
         Header
     </div>

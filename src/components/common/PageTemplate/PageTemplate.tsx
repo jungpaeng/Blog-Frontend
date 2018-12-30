@@ -4,7 +4,7 @@ import styles from './PageTemplate.module.scss';
 
 const cx = classNames.bind(styles);
 
-const PageTemplate = () => (
+const PageTemplate: React.FunctionComponent = () => (
     <div className={cx('page-template')}>
         PageTemplate
     </div>
