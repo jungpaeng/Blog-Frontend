@@ -1,10 +1,12 @@
 import * as React from 'react';
+import PageTemplate from '../components/common/PageTemplate';
+import PostInfo from '../components/post/PostInfo';
 
 const PostPage: React.FunctionComponent = () => {
     return (
-        <div>
-            Post
-        </div>
+        <PageTemplate>
+            <PostInfo />
+        </PageTemplate>
     );
 };
 
