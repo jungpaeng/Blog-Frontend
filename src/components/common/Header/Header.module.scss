@@ -26,7 +26,6 @@
             width: 100%;
         }
         @include media("<medium") {
-            background-color: tomato;
             padding: 0 1rem;
         }
     }
