@@ -12,7 +12,14 @@ import styles from './EditorPane.module.scss';
 
 const cx = classNames.bind(styles);
 
-class EditorPane extends React.Component {
+interface IProps {
+    markdown: string;
+    tags: string;
+    title: string;
+    onChangeInput: ({target: {name, value}}: React.ChangeEvent<HTMLInputElement>) => void;
+}
+
+class EditorPane extends React.Component<IProps> {
     editorRef: HTMLDivElement = {} as HTMLDivElement;
     codeMirror: CodeMirror.Editor = {} as CodeMirror.Editor;
 
@@ -23,19 +30,53 @@ class EditorPane extends React.Component {
             mode: 'markdown',
             theme: 'monokai'
         });
+        this.codeMirror.on('change', this.handleChangeMarkdown);
     }
 
     componentDidMount() {
         this.initializeEditor();
     }
 
+    componentDidUpdate(prevProps: IProps, prevState: IProps) {
+        if (prevProps.markdown !== this.props.markdown) {
+            if (!this.codeMirror) {
+                return;
+            }
+            this.codeMirror.setValue(this.props.markdown);
+            if (!this.cursor) {
+                return;
+            }
+            this.codeMirror.setCursor(this.cursor);
+        }
+    }
+
+    handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+        const {onChangeInput} = this.props;
+        const {value, name} = e.target;
+        onChangeInput({name, value});
+    }
+
+    handleChangeMarkdown = (doc: CodeMirror.Editor) => {
+        const {onChangeInput} = this.props;
+        this.cursor = doc.getCursor();
+
+        onChangeInput({
+            name: 'markdown',
+            value: doc.getValue()
+        });
+    }
+
     render() {
+        const {tags, title} = this.props;
+
         return (
             <div className={cx('editor-pane')}>
                 <input
                     className={cx('title')}
                     placeholder="제목을 입력하세요"
                     name="title"
+                    value={title}
+                    onChange={this.handleChange}
                 />
                 <div
                     className={cx('code-editor')}
@@ -46,6 +87,8 @@ class EditorPane extends React.Component {
                     <input
                         placeholder="태그를 입력하세요 (쉼표로 구분)"
                         name="tags"
+                        value={tags}
+                        onChange={this.handleChange}
                     />
                 </div>
             </div>

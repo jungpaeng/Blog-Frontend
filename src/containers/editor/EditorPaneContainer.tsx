@@ -18,7 +18,7 @@ interface IDispatchToProps {
 type Props = IStateToProps & IDispatchToProps;
 
 class EditorPaneContainer extends React.Component<Props> {
-    handleChangeInput = ({name, value}: IEditorPayload) => {
+    handleChangeInput = ({target: {name, value}}: React.ChangeEvent<HTMLInputElement>) => {
         const {EditorActions} = this.props;
         EditorActions.changeInput({name, value});
     }
@@ -31,6 +31,7 @@ class EditorPaneContainer extends React.Component<Props> {
                 title={title}
                 markdown={markdown}
                 tags={tags}
+                onChangeInput={this.handleChangeInput}
             />
         );
     }
