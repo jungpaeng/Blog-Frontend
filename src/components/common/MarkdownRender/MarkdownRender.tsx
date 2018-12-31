@@ -9,7 +9,7 @@ interface IState {
     html: string;
 }
 interface IProps {
-    markdown?: string;
+    markdown: string;
 }
 
 class MarkdownRender extends React.Component<IProps, IState> {

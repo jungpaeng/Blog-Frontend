@@ -6,18 +6,18 @@ import MarkdownRender from '../../common/MarkdownRender';
 const cx = classNames.bind(styles);
 
 interface IProps {
-    markdown?: any;
-    title?: string;
+    markdown: string;
+    title: string;
 }
 
 const PreviewPane: React.FC<IProps> = ({markdown, title}) => {
     return (
         <div className={cx('preview-pane')}>
             <h1 className={cx('title')}>
-                제목
+                {title}
             </h1>
             <div>
-                <MarkdownRender />
+                <MarkdownRender markdown={markdown} />
             </div>
         </div>
     );
