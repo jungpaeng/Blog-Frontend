@@ -9,7 +9,7 @@
 
         .pane {
             display: flex;
-            flex: 1;
+            min-width: 300px;
             overflow: auto;
         }
 

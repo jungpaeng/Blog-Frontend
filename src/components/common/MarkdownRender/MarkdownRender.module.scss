@@ -1,6 +1,9 @@
 @import '../../../styles/utils';
 
 .markdown-render {
+    word-break: break-word;
+    word-wrap: break-word;
+
     blockquote {
         border-left: 4px solid $oc-blue-6;
         padding: 0.8rem;
