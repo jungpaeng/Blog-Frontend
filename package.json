@@ -48,6 +48,7 @@
     "@types/classnames": "^2.2.6",
     "@types/codemirror": "^0.0.71",
     "@types/marked": "^0.5.0",
+    "@types/prismjs": "^1.9.0",
     "@types/react-redux": "^6.0.11",
     "@types/react-router-dom": "^4.3.1",
     "@types/redux-actions": "^2.3.1"
