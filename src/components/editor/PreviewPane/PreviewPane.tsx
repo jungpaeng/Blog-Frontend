@@ -1,6 +1,7 @@
 import * as React from 'react';
 import classNames from 'classnames/bind';
 import styles from './PreviewPane.module.scss';
+import MarkdownRender from '../../common/MarkdownRender';
 
 const cx = classNames.bind(styles);
 
@@ -15,7 +16,9 @@ const PreviewPane: React.FC<IProps> = ({markdown, title}) => {
             <h1 className={cx('title')}>
                 제목
             </h1>
-            <div>내용</div>
+            <div>
+                <MarkdownRender />
+            </div>
         </div>
     );
 };
