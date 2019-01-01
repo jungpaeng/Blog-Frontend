@@ -9,6 +9,7 @@ import 'codemirror/lib/codemirror.css';
 import 'codemirror/theme/monokai.css';
 import classNames from 'classnames/bind';
 import styles from './EditorPane.module.scss';
+import {IEditorState} from '../../../store/modules/editor';
 
 const cx = classNames.bind(styles);
 
@@ -17,14 +18,15 @@ export interface IEditorChangeInputParams {
     value: string;
 }
 
+export type EditorPaneProps = IEditorState;
+
 interface IProps {
-    markdown: string;
-    tags: string;
-    title: string;
     onChangeInput: ({name, value}: IEditorChangeInputParams) => void;
 }
 
-class EditorPane extends React.Component<IProps> {
+type Props = IProps & EditorPaneProps;
+
+class EditorPane extends React.Component<Props> {
     editorRef!: HTMLDivElement;
     cursor!: CodeMirror.Position;
     codeMirror!: CodeMirror.Editor;
@@ -43,7 +45,7 @@ class EditorPane extends React.Component<IProps> {
         this.initializeEditor();
     }
 
-    componentDidUpdate(prevProps: IProps) {
+    componentDidUpdate(prevProps: Props) {
         if (prevProps.markdown !== this.props.markdown) {
             if (!this.codeMirror || !this.cursor) {
                 return;

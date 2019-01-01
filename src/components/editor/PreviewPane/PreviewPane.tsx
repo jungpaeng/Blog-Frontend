@@ -2,15 +2,15 @@ import * as React from 'react';
 import classNames from 'classnames/bind';
 import styles from './PreviewPane.module.scss';
 import MarkdownRender from '../../common/MarkdownRender';
+import {IEditorState} from '../../../store/modules/editor';
 
 const cx = classNames.bind(styles);
 
-interface IProps {
-    markdown: string;
-    title: string;
-}
+export type PreviewPaneProps = Partial<IEditorState>;
 
-const PreviewPane: React.FC<IProps> = ({markdown, title}) => {
+type Props = PreviewPaneProps;
+
+const PreviewPane: React.FC<Props> = ({markdown, title}) => {
     return (
         <div className={cx('preview-pane')}>
             <h1 className={cx('title')}>

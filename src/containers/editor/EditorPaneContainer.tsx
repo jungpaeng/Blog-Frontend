@@ -1,21 +1,19 @@
 import * as React from 'react';
 import {connect} from 'react-redux';
 import {bindActionCreators} from 'redux';
-import EditorPane, {IEditorChangeInputParams} from '../../components/editor/EditorPane/EditorPane';
+import EditorPane, {
+    IEditorChangeInputParams, EditorPaneProps
+} from '../../components/editor/EditorPane/EditorPane';
 import {actionCreators as editorActions} from '../../store/modules/editor';
 import {IStoreState} from '../../store/modules';
 
-interface IStateToProps {
-    markdown: string;
-    tags: string;
-    title: string;
-}
+type StateToProps = EditorPaneProps;
 
 interface IDispatchToProps {
     EditorActions: typeof editorActions;
 }
 
-type Props = IStateToProps & IDispatchToProps;
+type Props = StateToProps & IDispatchToProps;
 
 class EditorPaneContainer extends React.Component<Props> {
     handleChangeInput = ({name, value}: IEditorChangeInputParams) => {
