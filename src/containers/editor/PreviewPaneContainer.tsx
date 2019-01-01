@@ -2,11 +2,11 @@ import * as React from 'react';
 import {connect} from 'react-redux';
 import PreviewPane from '../../components/editor/PreviewPane';
 import {IStoreState} from '../../store/modules';
-import {PreviewPaneProps} from '../../components/editor/PreviewPane/PreviewPane';
+import {IEditorState} from '../../store/modules/editor';
 
-type StateToProps = PreviewPaneProps;
+interface IStateToProps extends Partial<IEditorState> {}
 
-type Props = StateToProps;
+type Props = IStateToProps;
 
 class PreviewPaneContainer extends React.Component<Props> {
     render() {

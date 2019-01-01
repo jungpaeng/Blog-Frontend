@@ -18,13 +18,13 @@ export interface IEditorChangeInputParams {
     value: string;
 }
 
-export type EditorPaneProps = IPostBody;
+interface IEditorPaneProps extends IPostBody {}
 
 interface IProps {
     onChangeInput: ({name, value}: IEditorChangeInputParams) => void;
 }
 
-type Props = IProps & EditorPaneProps;
+type Props = IProps & IEditorPaneProps;
 
 class EditorPane extends React.Component<Props> {
     editorRef!: HTMLDivElement;

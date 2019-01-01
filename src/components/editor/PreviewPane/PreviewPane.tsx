@@ -6,9 +6,9 @@ import {IPostInfo} from '../../../@types/models/post';
 
 const cx = classNames.bind(styles);
 
-export type PreviewPaneProps = IPostInfo;
+interface IPreviewPaneProps extends IPostInfo {}
 
-type Props = PreviewPaneProps;
+type Props = IPreviewPaneProps;
 
 const PreviewPane: React.FC<Props> = ({markdown, title}) => {
     return (
