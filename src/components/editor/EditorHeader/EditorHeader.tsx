@@ -6,8 +6,8 @@ import Button from '../../common/Button';
 const cx = classNames.bind(styles);
 
 interface IProps {
-    onGoBack?: (event: React.MouseEvent<HTMLAnchorElement, MouseEvent>) => void;
-    onSubmit?: (event: React.MouseEvent<HTMLAnchorElement, MouseEvent>) => void;
+    onGoBack: (event: React.MouseEvent<HTMLAnchorElement, MouseEvent>) => void;
+    onSubmit: (event: React.MouseEvent<HTMLAnchorElement, MouseEvent>) => void;
 }
 
 const EditorHeader: React.FC<IProps> = ({onGoBack, onSubmit}) => {
@@ -23,7 +23,7 @@ const EditorHeader: React.FC<IProps> = ({onGoBack, onSubmit}) => {
             </div>
             <div className={cx('submit')}>
                 <Button
-                    onClick={onGoBack}
+                    onClick={onSubmit}
                     theme="outline"
                 >
                     작성하기
