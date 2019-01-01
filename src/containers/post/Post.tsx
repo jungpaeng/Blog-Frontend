@@ -37,14 +37,21 @@ class Post extends React.Component<Props> {
     }
 
     render() {
-        const {loading} = this.props;
+        const {loading, post} = this.props;
+        const {title, publishedDate, body, tags} = post;
 
         if (loading) return null;
 
         return (
             <>
-                <PostInfo />
-                <PostBody />
+                <PostInfo
+                    title={title}
+                    publishedDate={publishedDate}
+                    tags={tags}
+                />
+                <PostBody
+                    body={body}
+                />
             </>
         );
     }
