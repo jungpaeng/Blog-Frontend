@@ -9,7 +9,7 @@ import 'codemirror/lib/codemirror.css';
 import 'codemirror/theme/monokai.css';
 import classNames from 'classnames/bind';
 import styles from './EditorPane.module.scss';
-import {IPostBody} from '../../../@types/models/post';
+import {IPostEditBody} from '../../../@types/models/post';
 
 const cx = classNames.bind(styles);
 
@@ -18,7 +18,7 @@ export interface IEditorChangeInputParams {
     value: string;
 }
 
-interface IEditorPaneProps extends IPostBody {}
+interface IEditorPaneProps extends IPostEditBody {}
 
 interface IProps {
     onChangeInput: ({name, value}: IEditorChangeInputParams) => void;

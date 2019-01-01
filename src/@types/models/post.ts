@@ -3,6 +3,6 @@ export interface IPostInfo {
     markdown: string;
 }
 
-export interface IPostBody extends IPostInfo {
+export interface IPostEditBody extends IPostInfo {
     tags: string;
 }
