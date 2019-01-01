@@ -1,6 +1,9 @@
 import * as React from 'react';
+import {RouteComponentProps} from 'react-router';
 
-const NotFoundPage: React.FC = () => {
+interface IOwnProps extends RouteComponentProps {}
+
+const NotFoundPage: React.FC<IOwnProps> = () => {
     return (
         <div>
             NotFound
