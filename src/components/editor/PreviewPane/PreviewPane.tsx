@@ -2,11 +2,11 @@ import * as React from 'react';
 import classNames from 'classnames/bind';
 import styles from './PreviewPane.module.scss';
 import MarkdownRender from '../../common/MarkdownRender';
-import {IEditorState} from '../../../store/modules/editor';
+import {IPostInfo} from '../../../@types/models/post';
 
 const cx = classNames.bind(styles);
 
-export type PreviewPaneProps = Partial<IEditorState>;
+export type PreviewPaneProps = IPostInfo;
 
 type Props = PreviewPaneProps;
 
