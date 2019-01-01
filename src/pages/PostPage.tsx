@@ -1,13 +1,20 @@
 import * as React from 'react';
+import {RouteComponentProps} from 'react-router';
 import PageTemplate from '../components/common/PageTemplate';
-import PostInfo from '../components/post/PostInfo';
-import PostBody from '../components/post/PostBody';
+import Post from '../containers/post/Post';
 
-const PostPage: React.FC = () => {
+interface IPageParams {
+    id: string;
+}
+
+interface IOwnProps extends RouteComponentProps<IPageParams> {}
+
+const PostPage: React.FC<IOwnProps> = ({match}) => {
+    const {id} = match.params;
+
     return (
         <PageTemplate>
-            <PostInfo />
-            <PostBody />
+            <Post id={id} />
         </PageTemplate>
     );
 };
