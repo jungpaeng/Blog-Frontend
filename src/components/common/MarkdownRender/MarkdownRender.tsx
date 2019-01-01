@@ -31,6 +31,10 @@ class MarkdownRender extends React.Component<IProps, IState> {
         };
     }
 
+    componentDidMount() {
+        Prism.highlightAll();
+    }
+
     componentDidUpdate(prevProps: IProps, prevState: IState) {
         if (prevProps.markdown !== this.props.markdown) {
             this.renderMarkdown();
