@@ -2,7 +2,7 @@ import * as React from 'react';
 import {connect} from 'react-redux';
 import {bindActionCreators} from 'redux';
 import EditorPane, {IEditorChangeInputParams} from '../../components/editor/EditorPane/EditorPane';
-import {actionCreators as editorActions, IEditorPayload} from '../../store/modules/editor';
+import {actionCreators as editorActions} from '../../store/modules/editor';
 import {IStoreState} from '../../store/modules';
 
 interface IStateToProps {
